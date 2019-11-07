@@ -30,7 +30,7 @@ public class FileWork {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         String line = null;
         while ((line = bufferedReader.readLine()) != null) {
-            if (line.indexOf("张") == -1) {
+            if (line.indexOf("张") == 0) {
                 fileWriter2.write(line+"\n");
                 fileWriter2.flush();
             }
