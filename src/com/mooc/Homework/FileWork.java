@@ -21,7 +21,7 @@ public class FileWork {
                 break;
             }
             fileWriter1.write(text+"\n");
-            fileWriter1.flush();
+            fileWriter1.flush();//强制将缓冲区中的内容发送出去，而不用等到缓冲区满
         }
         fileWriter1.close();
         System.out.println("请输入文件2的路径：");
@@ -34,7 +34,7 @@ public class FileWork {
         while ((line = bufferedReader.readLine()) != null) {
             if (line.indexOf("张") == 0) {
                 fileWriter2.write(line+"\n");
-                fileWriter2.flush();
+                fileWriter2.flush();//强制将缓冲区中的内容发送出去，而不用等到缓冲区满
             }
         }
         fileWriter2.close();
