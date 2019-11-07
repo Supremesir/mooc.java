@@ -27,3 +27,8 @@ hs_err_pid*
 将删除 .DS_Store
 将删除 out/production/mooc/META-INF/
 将删除 src/
+将删除 src/.DS_Store
+将删除 src/com/.DS_Store
+将删除 src/com/mooc/.DS_Store
+将删除 src/com/mooc/Homework/.DS_Store
+将删除 src/com/mooc/Student/.DS_Store
