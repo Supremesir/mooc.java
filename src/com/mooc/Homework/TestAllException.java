@@ -2,6 +2,7 @@
 
 package com.mooc.Homework;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -32,7 +33,7 @@ class MyException extends Exception {
 
 public class TestAllException {
 
-    public static double calculateArea(double a, double b) throws MyException{
+    public static double calculateArea(double a, double b) throws MyException {
         if (a >= 0.0 && b >= 0.0) {
             return a * b;
         } else {
@@ -42,7 +43,7 @@ public class TestAllException {
         //计算并且返回矩形面积
     }
 
-    public static void main(String[] args) throws MyException {
+    public static void main(String[] args) {
         //从键盘上接收矩形的长和宽
         System.out.println("请输入矩形的长和宽，用空格分割：");
         Scanner scanner = new Scanner(System.in);
@@ -55,8 +56,7 @@ public class TestAllException {
             double area = calculateArea(length, width);
             //输出矩形面积
             System.out.println("矩形的面积为" + area);
-        } catch (IllegalArgumentException e) {
-            System.out.println("输入的数字不对"+e.getMessage());
+        } catch (MyException e) {
             e.printStackTrace();
         }
 
