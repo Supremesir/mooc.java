@@ -1,6 +1,10 @@
+//第6章 异常处理
+
 package com.mooc.Homework;
 
 import java.util.Scanner;
+
+
 
 class MyException extends Exception {
 
