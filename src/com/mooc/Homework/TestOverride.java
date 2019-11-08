@@ -37,7 +37,7 @@ class Course {
 
     @Override
     public boolean equals(Object o) {
-        Course t = (Course)o;
+        Course t = (Course) o;  //下转型，将指向子类对象的父类引用o赋给子类引用t
         if (t.CourseName.equals(CourseName)&&t.CourseNum==CourseNum) {
             return true;
         } else return false;

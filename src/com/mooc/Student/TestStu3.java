@@ -78,8 +78,9 @@ public class TestStu3 {
         Scanner scanner = new Scanner(System.in);
         final int NUM = 2;
         Student2[] stu2 = new Student2[NUM];
-        stu2[0] =  new UnderGraStu2();
+        stu2[0] =  new UnderGraStu2();  //上转型
         stu2[1] = new GraStu2();
+        //上转型对象不能使用子类新增成员(包括成员变量,成员方法),只能使用子类重写父类的方法,被子类隐藏的父类变量;子类未重写的父类方法,未被隐藏的父类成员变量.
         for (int i = 0; i < 2; i++) {
             stu2[i].setName(scanner.next());
             stu2[i].printInfo();
