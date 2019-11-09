@@ -1,4 +1,4 @@
-package com.mooc.Student;
+package com.mooc.TestStu;
 
 
 import java.util.Scanner;
