@@ -17,15 +17,14 @@ public class GUI extends JFrame implements ActionListener {
         JFrame jFrame = new JFrame(title);
         Container container = jFrame.getContentPane();
 
-        //设置3*2的网格布局
-        GridLayout gridLayout = new GridLayout(3, 2);
+        GridBagLayout gridLayout = new GridBagLayout();
+        GridBagConstraints gridBagConstraints= new GridBagConstraints();
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
         jFrame.setLayout(gridLayout);
 
         jFrame.setVisible(true);//设置窗口可见
         jFrame.setSize(600,300); //设置窗口的属性 窗口位置以及窗口的大小
         jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE); //设置关闭方式 如果不设置的话 似乎关闭窗口之后不会退出程序
-
-
 
         JLabel jLabel1 = new JLabel("请输入文件路径和名称:");
         JLabel jLabel2 = new JLabel("请输入需要追加的内容:");
@@ -36,7 +35,41 @@ public class GUI extends JFrame implements ActionListener {
         JTextField jTextField2 = new JTextField();
         jTextField2.setBackground(Color.WHITE);
 
+        JTextField jTextField3 = new JTextField();
+        jTextField3.setBackground(Color.WHITE);
+
         JButton jButton = new JButton("将文本区的内容写入文件");
+
+        gridBagConstraints.gridwidth = 1;
+        gridBagConstraints.weightx = 0;
+        gridBagConstraints.weighty = 0;
+        gridLayout.setConstraints(jLabel1, gridBagConstraints);
+
+        gridBagConstraints.gridwidth = 0;
+        gridBagConstraints.weightx = 1;
+        gridBagConstraints.weighty = 1;
+        gridLayout.setConstraints(jTextField1, gridBagConstraints);
+
+        gridBagConstraints.gridwidth = 1;
+        gridBagConstraints.weightx = 0;
+        gridBagConstraints.weighty = 0;
+        gridLayout.setConstraints(jLabel2, gridBagConstraints);
+
+        gridBagConstraints.gridwidth = 0;
+        gridBagConstraints.weightx = 1;
+        gridBagConstraints.weighty = 1;
+        gridLayout.setConstraints(jTextField2, gridBagConstraints);
+
+
+        gridBagConstraints.gridwidth = 0;
+        gridBagConstraints.weightx = 1;
+        gridBagConstraints.weighty = 0;
+        gridLayout.setConstraints(jButton, gridBagConstraints);
+
+        gridBagConstraints.gridwidth = 0;
+        gridBagConstraints.weightx = 1;
+        gridBagConstraints.weighty = 1;
+        gridLayout.setConstraints(jTextField3, gridBagConstraints);
 
         container.add(jLabel1);
         container.add(jTextField1);
@@ -46,17 +79,7 @@ public class GUI extends JFrame implements ActionListener {
 
         container.add(jButton);
 
-
-//        GridBagLayout layout = new GridBagLayout();
-//        GridBagConstraints s = new GridBagConstraints();// 定义一个GridBagConstraints，
-//        // 是用来控制添加进的组件的显示位置
-//        s.fill = GridBagConstraints.BOTH;
-//        // 该方法是为了设置如果组件所在的区域比组件本身要大时的显示情况
-//        s.gridwidth = 1;// 该方法是设置组件水平所占用的格子数，如果为0，就说明该组件是该行的最后一个
-//        s.weightx = 0;// 该方法设置组件水平的拉伸幅度，如果为0就说明不拉伸，不为0就随着窗口增大进行拉伸，0到1之间
-//        s.weighty = 0;// 该方法设置组件垂直的拉伸幅度，如果为0就说明不拉伸，不为0就随着窗口增大进行拉伸，0到1之间
-//        layout.setConstraints(jLabel1, s);// 设置组件
-//        layout.setConstraints(jTextField1, s);
+        container.add(jTextField3);
     }
 
     public static void main(String[] args) {
