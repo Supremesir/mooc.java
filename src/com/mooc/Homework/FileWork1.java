@@ -14,11 +14,15 @@ import java.util.Scanner;
 public class FileWork1 {
     public static void main(String[] args) throws IOException {
 
+        /**
+         * 本程序基于上一个实验生成的文件（文件末尾要有回车）
+         */
+
         String file;
         System.out.println("请输入要处理的文件名：");
         Scanner scanner = new Scanner(System.in);
         file = scanner.nextLine();
-        RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
+
         while (true) {
             System.out.println("本程序的任务是：\n" +
                     "1.将" + file + "中姓名\"hello\"改为\"where\"\n" +
@@ -26,15 +30,19 @@ public class FileWork1 {
                     "输入finish结束程序");
             String t = scanner.next();
             if (t.equals("finish")) {
-                randomAccessFile.close();
                 break;
             }
             switch (t) {
                 case "1":
-                    change_name(randomAccessFile);
+                    //每次都进行打开关闭文件操作，保证文本正常从头到尾读取
+                    RandomAccessFile randomAccessFile0 = new RandomAccessFile(file, "rw");
+                    change_name(randomAccessFile0);
+                    randomAccessFile0.close();
                     break;
                 case "2":
-                    add_content(randomAccessFile);
+                    RandomAccessFile randomAccessFile1 = new RandomAccessFile(file, "rw");
+                    add_content(randomAccessFile1);
+                    randomAccessFile1.close();
                     break;
                 default:
                     break;
@@ -46,7 +54,7 @@ public class FileWork1 {
         long cur = 0, last = 0;
         String text;
         while ((text = randomAccessFile.readLine()) != null) {
-            //获取行末指针位置
+            //获取每行末指针位置
             cur = randomAccessFile.getFilePointer();
             if (text.contains("hello")) {
                 //此处要求target和replacement文字长度保持一致，否则会导致指针位置偏差
