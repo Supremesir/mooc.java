@@ -1,4 +1,4 @@
-package GUI;
+package com.mooc.GUI;
 
 import javax.swing.*;
 import java.awt.*;

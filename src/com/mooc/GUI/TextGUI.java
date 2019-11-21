@@ -1,6 +1,6 @@
 //第8章 图形用户界面
 
-package GUI;
+package com.mooc.GUI;
 
 import javax.swing.*;
 import java.awt.*;
