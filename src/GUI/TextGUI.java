@@ -1,6 +1,6 @@
 //第8章 图形用户界面
 
-package com.mooc.Homework;
+package GUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,14 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.concurrent.Flow;
 
 /**
  * @author HaoFan Fang
  * @date 2019/11/12 16:26
  */
 
-public class GUI extends JFrame implements ActionListener{
+public class TextGUI extends JFrame implements ActionListener{
 
     /**
      * 声明需要的组件
@@ -35,7 +34,7 @@ public class GUI extends JFrame implements ActionListener{
      * 构造窗体界面
      * @param title 主窗体的标题
      */
-    public GUI(String title) {
+    public TextGUI(String title) {
 
         gridBagConstraints.fill = GridBagConstraints.BOTH;//设置若组件所在的区域比组件本身要大时，使组件完全填满其显示区域。
 
@@ -148,7 +147,7 @@ public class GUI extends JFrame implements ActionListener{
      * @param args
      */
     public static void main(String[] args) {
-        new GUI("Main");
+        new TextGUI("Main");
     }
 
 }
