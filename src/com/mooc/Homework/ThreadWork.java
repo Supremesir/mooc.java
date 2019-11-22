@@ -27,6 +27,7 @@ class ReadName implements Runnable {
         this.r = r;
     }
 
+    //读线程
     @Override
     public void run() {
         Scanner reader=new Scanner(System.in);
@@ -42,6 +43,7 @@ class ReadName implements Runnable {
             }
             System.out.println("请输入姓名：");
             r.name=reader.nextLine();
+            //线程联合（将写线程强制加入读线程，读入姓名和ID结束后，加入写线程，写完后继续执行读线程）
             Thread write = new Thread(new WriteName(r));
             write.start();
             try {
@@ -53,6 +55,7 @@ class ReadName implements Runnable {
     }
 }
 
+
 class WriteName implements Runnable {
 
     RWInfo w;
@@ -60,16 +63,13 @@ class WriteName implements Runnable {
         this.w = w;
     }
 
-    void print(){
+    //写线程
+    @Override
+    public void run() {
         if(w.ID.equals("finish"))
             return;
         System.out.println("输出学号："+w.ID+"，输出姓名："+w.name);
         System.out.println();
-    }
-
-    @Override
-    public void run() {
-        print();
     }
 }
 
