@@ -9,14 +9,14 @@ abstract class ObjectVolume
 
 class Sphere extends ObjectVolume{
     private int r =3;
-    double getVolume(){
+    public double getVolume(){
         return ((double)4/(double)3)*Math.PI*r*r*r;
     }
 }
 
 class Cube extends ObjectVolume {
     private int a=3,b=4,c=5;
-    double getVolume(){
+    public double getVolume(){
         return a*b*c;
     }
 }
@@ -24,7 +24,7 @@ class Cube extends ObjectVolume {
 class Cylinder extends ObjectVolume{
     private int r=3;
     private int h=4;
-    double getVolume() {
+    public double getVolume() {
         return Math.PI*r*r*h;
     }
 
